@@ -1,15 +1,15 @@
-package lesson7.project;
+package lesson8.project;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import lesson7.project.enums.Periods;
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
+import lesson8.project.enums.Periods;
 
 import java.io.IOException;
 
-public class AccuWeatherProvider implements WeatherProvider {
+public abstract class AccuWeatherProvider implements WeatherProvider {
 
     private static final String BASE_HOST = "dataservice.accuweather.com";
     private static final String FORECAST_ENDPOINT = "forecasts";

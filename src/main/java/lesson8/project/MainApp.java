@@ -1,4 +1,4 @@
-package lesson7.project;
+package lesson8.project;
 
 public class MainApp {
 

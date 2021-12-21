@@ -1,7 +1,8 @@
-package lesson7.project;
+package lesson8.project;
 
-import lesson7.project.enums.Functionality;
-import lesson7.project.enums.Periods;
+import lesson8.project.entity.WeatherData;
+import lesson8.project.enums.Functionality;
+import lesson8.project.enums.Periods;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -9,7 +10,12 @@ import java.util.Map;
 
 public class Controller {
 
-    WeatherProvider weatherProvider = new AccuWeatherProvider();
+    WeatherProvider weatherProvider = new AccuWeatherProvider() {
+        @Override
+        public WeatherData getAllFromDb() throws IOException {
+            return null;
+        }
+    };
     Map<Integer, Functionality> variantResult = new HashMap();
 
     public Controller() {
@@ -37,7 +43,7 @@ public class Controller {
         weatherProvider.getWeather(Periods.NOW);
     }
 
-    public void getWeatherIn5Days() throws IOException { //допилить
-        weatherProvider.getWeather(Periods.NOW);
+    public void getWeatherIn5Days() {
+        throw new RuntimeException("Implement in h/w");
     }
 }
